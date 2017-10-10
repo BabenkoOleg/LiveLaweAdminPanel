@@ -61,7 +61,7 @@
 class User < ActiveRecord::Base
   # Includes -------------------------------------------------------------------
 
-  mount_uploader :avatar, AvatarUploader
+  # mount_uploader :avatar, AvatarUploader
 
   # Relations ------------------------------------------------------------------
 
