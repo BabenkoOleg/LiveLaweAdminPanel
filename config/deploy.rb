@@ -9,10 +9,10 @@ require 'mina/rvm'    # for rvm support. (https://rvm.io)
   # repository   - Git repo to clone from. (needed by mina/git)
   # branch       - Branch name to deploy. (needed by mina/git)
 
-set :application_name, 'livelaw'
+set :application_name, 'livelaw_admin'
 set :domain, '5.101.78.188'
-set :deploy_to, '/home/oleg/livelaw'
-set :repository, 'git@github.com:BabenkoOleg/LiveLawAPI.git'
+set :deploy_to, '/home/oleg/livelaw_admin'
+set :repository, 'git@github.com:BabenkoOleg/LiveLawAdminPanel.git'
 set :branch, 'master'
 
 # Optional settings:
@@ -67,7 +67,8 @@ task :deploy do
         command %{touch tmp/restart.txt}
       end
 
-      invoke :'puma:restart'
+      invoke :'puma:stop'
+      invoke :'puma:start'
     end
   end
 end
