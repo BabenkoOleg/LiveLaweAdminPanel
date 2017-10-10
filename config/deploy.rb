@@ -25,7 +25,7 @@ set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/
 
 task :environment do
   # For those using RVM, use this to load an RVM version@gemset.
-  invoke :'rvm:use', 'ruby-2.4.1'
+  invoke :'rvm:use', 'ruby-2.4.2'
 end
 
 # Put any custom commands you need to run at setup
@@ -59,6 +59,7 @@ task :deploy do
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
+    invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
     on :launch do
