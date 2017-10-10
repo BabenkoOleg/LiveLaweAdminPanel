@@ -61,12 +61,6 @@
 class User < ActiveRecord::Base
   # Includes -------------------------------------------------------------------
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-         :trackable, :validatable
-
-  include DeviseTokenAuth::Concerns::User
-  include UsersFilter
-
   mount_uploader :avatar, AvatarUploader
 
   # Relations ------------------------------------------------------------------
