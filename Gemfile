@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Simple Rails app configuration
+gem "figaro"
 # Blazing fast application deployment tool
 gem 'mina'
 gem 'mina-puma', require: false
