@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Simple Rails app configuration
 gem "figaro"
+# Pretty print your Ruby objects with style -- in full color and with proper indentation
+gem 'awesome_print'
 # Blazing fast application deployment tool
 gem 'mina'
 gem 'mina-puma', require: false
