@@ -2,7 +2,7 @@ ActiveAdmin.register LegalLibrary::Document do
   menu parent: 'Legal Library', priority: 2, label: 'Documents'
 
   config.sort_order = 'title asc'
-  permit_params :title
+  permit_params :title, :category_id, :body
 
   filter :title
 
