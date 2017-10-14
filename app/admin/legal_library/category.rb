@@ -8,6 +8,18 @@ ActiveAdmin.register LegalLibrary::Category, as: 'LegalLibraryCategories' do
     def scoped_collection
       end_of_association_chain.top
     end
+
+    def create
+      create! do |format|
+        format.html { redirect_to admin_legal_library_categories_path }
+      end
+    end
+
+    def update
+      update! do |format|
+        format.html { redirect_to admin_legal_library_categories_path }
+      end
+    end
   end
 
   filter :title
