@@ -1,12 +1,13 @@
 ActiveAdmin.register LegalLibrary::Category, as: 'LegalLibraryCategories' do
-  menu parent: 'Legal Library', priority: 1, label: 'Categories'
-
+  config.filters = false
   config.sort_order = 'title asc'
-  permit_params :title
+  menu label: 'Legal Library', priority: 5
+  permit_params :title, :parent_category_id
 
   controller do
-    def scoped_collection
-      end_of_association_chain.top
+    def index
+      @collection = LegalLibrary::Category.top.page(params[:page]).per(10)
+      index!
     end
 
     def create
@@ -22,21 +23,33 @@ ActiveAdmin.register LegalLibrary::Category, as: 'LegalLibraryCategories' do
     end
   end
 
-  filter :title
-
   index do
-    selectable_column
     id_column
-    column :title
-    column "SubCategories" do |category|
-      render partial: "subcategories", locals: { subcategories: category.subcategories }
+    column "Category" do |category|
+      render partial: "category", locals: { category: category }
     end
-    actions
+    column "Subcategories" do |category|
+      render partial: "subcategories", locals: { category: category }
+    end
+  end
+
+  show do
+    attributes_table do
+      row :title
+      row ('documents') do
+        render partial: "documents", locals: { documents: resource.documents }
+      end
+    end
   end
 
   form do |f|
     f.inputs do
       f.input :title
+      f.input :parent_category_id, label: 'Parent',
+                                   as: :select,
+                                   collection: LegalLibrary::Category.top { |r| [r.title, r.id] },
+                                   include_blank: true,
+                                   selected: params[:parent]
     end
 
     f.actions

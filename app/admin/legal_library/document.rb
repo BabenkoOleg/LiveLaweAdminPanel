@@ -1,16 +1,32 @@
 ActiveAdmin.register LegalLibrary::Document do
-  menu parent: 'Legal Library', priority: 2, label: 'Documents'
+  menu false
 
   config.sort_order = 'title asc'
   permit_params :title, :category_id, :body
 
   filter :title
 
+  controller do
+    def destroy
+      destroy! do |format|
+        format.html { redirect_to admin_legal_library_category_path(resource.category) }
+      end
+    end
+  end
+
   index do
     selectable_column
     id_column
     column :title
     actions
+  end
+
+  show do
+    attributes_table do
+      row :title
+      row :category
+      row ('body') { "<div id='document_body'>#{resource.body}</div>".html_safe }
+    end
   end
 
   form do |f|
@@ -21,11 +37,19 @@ ActiveAdmin.register LegalLibrary::Document do
       f.input :category_id, label: 'Category',
                                    as: :select,
                                    collection: get_categories_for_select_input,
-                                   include_blank: false
+                                   include_blank: false,
+                                   selected: params[:category]
       f.input :body
     end
 
-    f.actions
+    f.actions do
+      f.action(:submit)
+      if resource.category.present?
+        f.cancel_link(admin_legal_library_category_path(resource.category))
+      else
+        f.cancel_link(admin_legal_library_categories_path)
+      end
+    end
   end
 end
 
@@ -44,8 +68,13 @@ def get_categories_for_select_input
        .each_with_index do |item, i|
 
     parent = items.find { |parent| parent[:id] == item[:parent] }
-    item[:title] = "-  #{item[:title]}"
-    item[:weight] = parent[:weight] + 1
+    if parent
+      item[:title] = "-  #{item[:title]}"
+      item[:weight] = parent[:weight] + 1
+    else
+      items.delete(item)
+      items.compact!
+    end
   end
   items.sort { |x, y| x[:weight] <=> y[:weight] }
        .map { |item| [item[:title], item[:id]] }

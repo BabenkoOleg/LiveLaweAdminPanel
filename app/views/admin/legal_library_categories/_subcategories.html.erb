@@ -1,9 +1,14 @@
-<% subcategories.each do |subcategory| %>
+<% category.subcategories.each do |subcategory| %>
   <p >
-    <%= link_to subcategory.title, admin_legal_library_subcategory_path(subcategory) %>
-    <%= link_to 'Delete', admin_legal_library_subcategory_path(subcategory), method: :delete, class: 'delete-nested' %>
-    <%= link_to 'Edit', edit_admin_legal_library_subcategory_path(subcategory), class: 'edit-nested' %>
+    <%= link_to subcategory.title, admin_legal_library_category_path(subcategory) %>
+    <%= link_to admin_legal_library_category_path(subcategory), method: :delete, class: 'delete-nested' do %>
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to edit_admin_legal_library_category_path(subcategory), class: 'edit-nested' do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    <% end %>
   </p>
 <% end %>
-<%= link_to 'Create new SubCategory', new_admin_legal_library_subcategory_path, class: 'create-new-nested'%>
-
+<%= link_to new_admin_legal_library_category_path(parent: category.id), class: 'create-new-nested' do %>
+  <i class="fa fa-plus" aria-hidden="true"></i>
+<% end %>

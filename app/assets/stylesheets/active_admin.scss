@@ -26,7 +26,20 @@ $panelHeaderBck: #2A2F35;
 #wrapper > .footer {
   z-index: 1000;
 }
+
+.index_as_table {
+  font-size: 14px !important;
+}
+
 #main_content {
+  #document_body {
+    box-shadow: 0 0 10px;
+    color: #4f4f4f;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 840px;
+  }
+
   .index_content {
     .index_as_table {
       a {
@@ -43,6 +56,29 @@ $panelHeaderBck: #2A2F35;
     }
   }
 
+  .fa {
+    color: inherit;
+    margin: 0 2px;
+  }
+
+  .panel_contents {
+    font-size: 14px;
+
+    p {
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: #7f8c8d;
+      padding: 2px 3px;
+
+      &:hover {
+        color: #fff;
+        background: #8C96A3;
+      }
+    }
+  }
+
   .inputs {
     padding: 20px 30px;
 
@@ -54,7 +90,6 @@ $panelHeaderBck: #2A2F35;
     }
   }
 }
-
 
 // wysiwyg start ---------------------------------------------------------------
 .fr-box.fr-basic.fr-top {

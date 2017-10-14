@@ -1,0 +1,12 @@
+<% documents.each do |document| %>
+  <p>
+    <%= link_to document.title, admin_legal_library_document_path(document) %>
+    <%= link_to edit_admin_legal_library_document_path(document) do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to admin_legal_library_document_path(document), method: :delete do %>
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+    <% end %>
+  </p>
+<% end %>
+<%= link_to 'Create new document', new_admin_legal_library_document_path(category: params[:id]) %>
