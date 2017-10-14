@@ -1,0 +1,9 @@
+<% subcategories.each do |subcategory| %>
+  <p >
+    <%= link_to subcategory.title, admin_legal_library_subcategory_path(subcategory) %>
+    <%= link_to 'Delete', admin_legal_library_subcategory_path(subcategory), method: :delete, class: 'delete-nested' %>
+    <%= link_to 'Edit', edit_admin_legal_library_subcategory_path(subcategory), class: 'edit-nested' %>
+  </p>
+<% end %>
+<%= link_to 'Create new SubCategory', new_admin_legal_library_subcategory_path, class: 'create-new-nested'%>
+
