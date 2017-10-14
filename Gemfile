@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'activeadmin'
 gem 'active_skin'
 gem 'devise'
+
+# Ruby gem for Froala jQuery WYSIWYG HTML Rich Text Editor
+gem "wysiwyg-rails"
 # Simple Rails app configuration
 gem "figaro"
 # Pretty print your Ruby objects with style -- in full color and with proper indentation
