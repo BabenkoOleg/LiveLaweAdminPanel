@@ -54,7 +54,18 @@ $panelHeaderBck: #2A2F35;
     border-bottom: none;
     border-radius: 0;
     box-shadow: none;
-    padding: 5px;
+    padding: 8px 4px;
+
+    .fr-separator {
+      &.fr-vs {
+        height: 30px;
+        margin: 0 4px;
+      }
+
+      &.fr-hs{
+        margin: 8px 0;
+      }
+    }
 
     .fr-command.fr-btn {
       height: 30px;
