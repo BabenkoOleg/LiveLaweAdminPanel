@@ -22,6 +22,10 @@ $panelHeaderBck: #2A2F35;
 
 @import "active_skin";
 
+#wrapper > .footer {
+  z-index: 1000;
+}
+
 #new_legal_library_document > fieldset.inputs,
 #new_legal_library_category > fieldset.inputs,
 #edit_legal_library_category > fieldset.inputs {
@@ -80,6 +84,11 @@ $panelHeaderBck: #2A2F35;
   .fr-wrapper {
     border: 1px solid #c8d0d5;
     box-shadow: none;
+
+  }
+
+  .fr-counter {
+    margin-left: 4px;
   }
 }
 // wysiwyg end -----------------------------------------------------------------
