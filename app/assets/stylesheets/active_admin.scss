@@ -8,6 +8,11 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
+@import "froala_editor.min";
+@import "froala_style.min";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 @import "active_admin/mixins";
 @import "active_admin/base";
 
@@ -17,6 +22,7 @@ $panelHeaderBck: #2A2F35;
 
 @import "active_skin";
 
+#new_legal_library_document > fieldset.inputs,
 #new_legal_library_category > fieldset.inputs,
 #edit_legal_library_category > fieldset.inputs {
   padding-top: 10px;
@@ -36,5 +42,33 @@ $panelHeaderBck: #2A2F35;
       }
     }
   }
-
 }
+
+// wysiwyg start ---------------------------------------------------------------
+.fr-box.fr-basic.fr-top {
+  display: inline-block;
+  width: 80%;
+
+  .fr-toolbar {
+    border: 1px solid #c8d0d5;
+    border-bottom: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 5px;
+
+    .fr-command.fr-btn {
+      height: 30px;
+      width: 30px;
+
+      .fa {
+        margin: 8px;
+      }
+    }
+  }
+
+  .fr-wrapper {
+    border: 1px solid #c8d0d5;
+    box-shadow: none;
+  }
+}
+// wysiwyg end -----------------------------------------------------------------
