@@ -12,6 +12,7 @@
 @import "froala_style.min";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'plugins/video.min.css';
 
 @import "active_admin/mixins";
 @import "active_admin/base";
@@ -25,28 +26,34 @@ $panelHeaderBck: #2A2F35;
 #wrapper > .footer {
   z-index: 1000;
 }
+#main_content {
+  .index_content {
+    .index_as_table {
+      a {
+        &.create-new-nested {
+          float: right;
+          text-align: right;
+        }
 
-#new_legal_library_document > fieldset.inputs,
-#new_legal_library_category > fieldset.inputs,
-#edit_legal_library_category > fieldset.inputs {
-  padding-top: 10px;
-}
-
-.index_content {
-  .index_as_table {
-    a {
-      &.create-new-nested {
-        float: right;
-        text-align: right;
-      }
-
-      &.edit-nested,
-      &.delete-nested {
-        float: right;
+        &.edit-nested,
+        &.delete-nested {
+          float: right;
+        }
       }
     }
   }
+
+  .inputs {
+    padding: 20px 30px;
+
+    select {
+      -webkit-appearance: none;
+      border-radius: 0;
+      padding: 4px 10px;
+    }
+  }
 }
+
 
 // wysiwyg start ---------------------------------------------------------------
 .fr-box.fr-basic.fr-top {
@@ -84,11 +91,18 @@ $panelHeaderBck: #2A2F35;
   .fr-wrapper {
     border: 1px solid #c8d0d5;
     box-shadow: none;
-
   }
 
-  .fr-counter {
-    margin-left: 4px;
+  .fr-video-resizer {
+    display: none;
+  }
+
+  .fr-video-by-url-layer {
+    .fr-input-line {
+      label {
+        display: none;
+      }
+    }
   }
 }
 // wysiwyg end -----------------------------------------------------------------

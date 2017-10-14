@@ -26,10 +26,3 @@ ActiveAdmin.register LegalLibrary::Document do
     f.actions
   end
 end
-
-#  id          :integer          not null, primary key
-#  category_id :integer
-#  title       :string
-#  body        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
