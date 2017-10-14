@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 # The administration framework for Ruby on Rails applications
 gem 'activeadmin'
+gem 'active_skin'
 gem 'devise'
 # Simple Rails app configuration
 gem "figaro"

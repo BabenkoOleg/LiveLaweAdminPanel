@@ -11,7 +11,30 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 
-// Overriding any non-variable SASS must be done after the fact.
-// For example, to change the default status-tag color:
-//
-//   .status_tag { background: #6090DB; }
+$skinActiveColor: #8C96A3;
+$skinHeaderBck: #2A2F35;
+$panelHeaderBck: #2A2F35;
+
+@import "active_skin";
+
+#new_legal_library_category > fieldset.inputs,
+#edit_legal_library_category > fieldset.inputs {
+  padding-top: 10px;
+}
+
+.index_content {
+  .index_as_table {
+    a {
+      &.create-new-nested {
+        float: right;
+        text-align: right;
+      }
+
+      &.edit-nested,
+      &.delete-nested {
+        float: right;
+      }
+    }
+  }
+
+}
