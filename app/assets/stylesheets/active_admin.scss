@@ -8,11 +8,6 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
-@import "froala_editor.min";
-@import "froala_style.min";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import 'plugins/video.min.css';
 
 @import "active_admin/mixins";
 @import "active_admin/base";
@@ -90,55 +85,3 @@ $panelHeaderBck: #2A2F35;
     }
   }
 }
-
-// wysiwyg start ---------------------------------------------------------------
-.fr-box.fr-basic.fr-top {
-  display: inline-block;
-  width: 80%;
-
-  .fr-toolbar {
-    border: 1px solid #c8d0d5;
-    border-bottom: none;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 8px 4px;
-
-    .fr-separator {
-      &.fr-vs {
-        height: 30px;
-        margin: 0 4px;
-      }
-
-      &.fr-hs{
-        margin: 8px 0;
-      }
-    }
-
-    .fr-command.fr-btn {
-      height: 30px;
-      width: 30px;
-
-      .fa {
-        margin: 8px;
-      }
-    }
-  }
-
-  .fr-wrapper {
-    border: 1px solid #c8d0d5;
-    box-shadow: none;
-  }
-
-  .fr-video-resizer {
-    display: none;
-  }
-
-  .fr-video-by-url-layer {
-    .fr-input-line {
-      label {
-        display: none;
-      }
-    }
-  }
-}
-// wysiwyg end -----------------------------------------------------------------
