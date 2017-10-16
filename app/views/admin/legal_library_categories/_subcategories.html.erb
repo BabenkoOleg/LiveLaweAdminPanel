@@ -2,7 +2,7 @@
   <p >
     <%= link_to subcategory.title, admin_legal_library_category_path(subcategory) %>
     <%= link_to admin_legal_library_category_path(subcategory), method: :delete, class: 'delete-nested' do %>
-      <i class="fa fa-trash-o" aria-hidden="true"></i>
+      <span class="glyphicon glyphicon-remove">
     <% end %>
     <%= link_to edit_admin_legal_library_category_path(subcategory), class: 'edit-nested' do %>
       <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
