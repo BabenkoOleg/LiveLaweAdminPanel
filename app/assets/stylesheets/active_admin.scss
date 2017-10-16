@@ -1,87 +1,29 @@
-// SASS variable overrides must be declared before loading up Active Admin's styles.
-//
-// To view the variables that Active Admin provides, take a look at
-// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
-// Active Admin source.
-//
-// For example, to change the sidebar width:
-// $sidebar-width: 242px;
+@import "bootstrap/mixins";
+@import "bootstrap/variables";
+@import "bootstrap/popovers";
+@import "bootstrap/tooltip";
+@import "bootstrap/buttons";
+@import "bootstrap/button-groups";
+@import "bootstrap/dropdowns";
 
-// Active Admin's got SASS!
+#legal_library_document_body_input {
+  @import "bootstrap";
+}
+@import "summernote";
+@import "active_material";
 
-@import "active_admin/mixins";
-@import "active_admin/base";
-
-$skinActiveColor: #8C96A3;
-$skinHeaderBck: #2A2F35;
-$panelHeaderBck: #2A2F35;
-
-@import "active_skin";
-
-#wrapper > .footer {
-  z-index: 1000;
+.note-toolbar.panel-heading {
+  padding: 0 0 5px 5px !important;
 }
 
-.index_as_table {
-  font-size: 14px !important;
-}
+#document_body {
+  max-width: 80%;
+  box-shadow: 0 0 10px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background: #fff;
 
-#main_content {
-  #document_body {
-    box-shadow: 0 0 10px;
-    color: #4f4f4f;
-    margin: 0 auto;
-    padding: 40px 20px;
-    width: 840px;
-  }
-
-  .index_content {
-    .index_as_table {
-      a {
-        &.create-new-nested {
-          float: right;
-          text-align: right;
-        }
-
-        &.edit-nested,
-        &.delete-nested {
-          float: right;
-        }
-      }
-    }
-  }
-
-  .fa {
-    color: inherit;
-    margin: 0 2px;
-  }
-
-  .panel_contents {
-    font-size: 14px;
-
-    p {
-      margin-bottom: 4px;
-    }
-
-    a {
-      color: #7f8c8d;
-      padding: 2px 3px;
-
-      &:hover {
-        color: #fff;
-        background: #8C96A3;
-      }
-    }
-  }
-
-  .inputs {
-    padding: 20px 30px;
-
-    select {
-      -webkit-appearance: none;
-      border-radius: 0;
-      outline: none;
-      padding: 4px 10px;
-    }
+  &:hover {
+    background: #fff;
   }
 }

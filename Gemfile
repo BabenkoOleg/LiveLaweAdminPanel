@@ -28,7 +28,9 @@ gem 'jbuilder', '~> 2.5'
 
 # The administration framework for Ruby on Rails applications
 gem 'activeadmin'
-gem 'active_skin'
+gem "active_material", github: "vigetlabs/active_material"
+gem 'summernote-rails'
+gem 'bootstrap-sass'
 gem 'devise'
 
 # Simple Rails app configuration
