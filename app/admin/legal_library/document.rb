@@ -2,7 +2,7 @@ ActiveAdmin.register LegalLibrary::Document do
   menu false
 
   config.sort_order = 'title asc'
-  permit_params :title, :category_id, :body
+  permit_params :title, :category_id, :free_content, :paid_content
 
   filter :title
 
@@ -25,7 +25,8 @@ ActiveAdmin.register LegalLibrary::Document do
     attributes_table do
       row :title
       row :category
-      row ('body') { "<div id='document_body'>#{resource.body}</div>".html_safe }
+      row ('free_content') { "<div id='document_free_content'>#{resource.free_content}</div>".html_safe }
+      row ('paid_content') { "<div id='document_paid_content'>#{resource.paid_content}</div>".html_safe }
     end
   end
 
@@ -39,7 +40,8 @@ ActiveAdmin.register LegalLibrary::Document do
                                    collection: get_categories_for_select_input,
                                    include_blank: false,
                                    selected: params[:category]
-      f.input :body
+      f.input :free_content
+      f.input :paid_content
     end
 
     f.actions do

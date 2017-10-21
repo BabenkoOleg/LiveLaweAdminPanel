@@ -1,3 +1,4 @@
+@import "bootstrap-sprockets";
 @import "bootstrap/mixins";
 @import "bootstrap/variables";
 @import "bootstrap/popovers";
@@ -7,9 +8,11 @@
 @import "bootstrap/dropdowns";
 @import "bootstrap/glyphicons";
 
-#legal_library_document_body_input {
-  @import "bootstrap";
+#legal_library_document_free_content_input,
+#legal_library_document_paid_content_input {
+  @import "bootstrap"; // I know, it is sad :(
 }
+
 @import "summernote";
 @import "active_material";
 
@@ -17,7 +20,8 @@
   padding: 0 0 5px 5px !important;
 }
 
-#document_body {
+#document_free_content,
+#document_paid_content, {
   max-width: 80%;
   box-shadow: 0 0 10px;
   border-radius: 4px;
