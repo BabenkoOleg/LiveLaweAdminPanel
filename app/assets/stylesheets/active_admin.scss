@@ -11,6 +11,18 @@
 #legal_library_document_free_content_input,
 #legal_library_document_paid_content_input {
   @import "bootstrap"; // I know, it is sad :(
+
+  label.label {
+    color: rgba(0, 0, 0, 0.54);
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 16px;
+    margin-bottom: 8px;
+    padding-left: 0;
+    text-align: left;
+    width: 100%;
+  }
 }
 
 @import "summernote";
