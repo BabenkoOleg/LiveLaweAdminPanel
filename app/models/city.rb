@@ -9,14 +9,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-# Indexes
-#
-#  index_cities_on_region_id  (region_id)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (region_id => regions.id)
-#
 
 class City < ApplicationRecord
   # Includes -------------------------------------------------------------------

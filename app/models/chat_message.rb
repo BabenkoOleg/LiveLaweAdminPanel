@@ -10,10 +10,6 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-# Indexes
-#
-#  index_chat_messages_on_chat_id  (chat_id)
-#
 
 class ChatMessage < ApplicationRecord
   # Relations ------------------------------------------------------------------

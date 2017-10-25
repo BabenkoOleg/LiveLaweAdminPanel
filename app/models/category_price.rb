@@ -14,14 +14,6 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-# Indexes
-#
-#  index_category_prices_on_category_id  (category_id)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (category_id => categories.id)
-#
 
 class CategoryPrice < ApplicationRecord
   # Constants ------------------------------------------------------------------
