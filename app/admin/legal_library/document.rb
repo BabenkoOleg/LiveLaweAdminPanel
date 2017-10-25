@@ -14,6 +14,17 @@ ActiveAdmin.register LegalLibrary::Document do
     end
   end
 
+  member_action :upload_file, method: :post do
+    resource.update(file: params[:file])
+    redirect_to admin_legal_library_document_path(resource), notice: "Uploaded!"
+  end
+
+  member_action :delete_file, method: :delete do
+    resource.remove_file!
+    resource.save
+    redirect_to admin_legal_library_document_path(resource), notice: "Removed!"
+  end
+
   index do
     selectable_column
     id_column
@@ -27,6 +38,9 @@ ActiveAdmin.register LegalLibrary::Document do
       row :category
       row ('free_content') { "<div id='document_free_content'>#{resource.free_content}</div>".html_safe }
       row ('paid_content') { "<div id='document_paid_content'>#{resource.paid_content}</div>".html_safe }
+      row ('file') do
+        render partial: "files", locals: { document: resource }
+      end
     end
   end
 
