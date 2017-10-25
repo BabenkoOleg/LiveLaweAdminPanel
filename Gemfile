@@ -33,6 +33,8 @@ gem 'summernote-rails'
 gem 'bootstrap-sass'
 gem 'devise'
 
+# Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks
+gem 'carrierwave', '~> 1.0'
 # Simple Rails app configuration
 gem "figaro"
 # Pretty print your Ruby objects with style -- in full color and with proper indentation
