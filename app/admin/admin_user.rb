@@ -1,5 +1,5 @@
 ActiveAdmin.register AdminUser do
-  menu parent: 'Users', priority: 2, label: 'Administrators'
+  menu parent: 'Пользователи', priority: 2, label: 'Администраторы'
 
   permit_params :email, :password, :password_confirmation
 
@@ -8,14 +8,15 @@ ActiveAdmin.register AdminUser do
   index do
     selectable_column
     id_column
-    column 'Email', :email
-    column 'Created', :created_at
+    column 'Почта', :email
+    column 'Создан', :created_at
     actions
   end
 
   show do
     attributes_table do
-      row ('Email') { |r| r.email }
+      row ('Почта') { |r| r.email }
+      row ('Создан') { |r| r.created_at }
     end
   end
 
@@ -23,9 +24,9 @@ ActiveAdmin.register AdminUser do
 
   form do |f|
     f.inputs do
-      f.input :email, label: 'Email'
-      f.input :password, required: false, label: 'Password'
-      f.input :password_confirmation, required: false, label: 'Password confirmation'
+      f.input :email, label: 'Эл. почта'
+      f.input :password, required: false, label: 'Пароль'
+      f.input :password_confirmation, required: false, label: 'Подтверждение пароля'
     end
     f.actions
   end
