@@ -22,7 +22,9 @@ ActiveAdmin.register LegalLibrary::Document do
   member_action :delete_file, method: :delete do
     resource.remove_file!
     resource.save
-    redirect_to admin_legal_library_document_path(resource)
+    respond_to do |format|
+      format.js { render('delete_file.js') }
+    end
   end
 
   index do

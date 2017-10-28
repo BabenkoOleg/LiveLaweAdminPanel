@@ -1,15 +1,16 @@
 <% if document.file.present? %>
   <p>
     <%= link_to document.file.file.try(:filename), document.file.url %>
-    <%= link_to delete_file_admin_legal_library_document_path(document), method: :delete do %>
+    <%= link_to delete_file_admin_legal_library_document_path(document), method: :delete, remote: true do %>
       <span class="glyphicon glyphicon-remove">
     <% end %>
   </p>
 <% else %>
   <p>
-    <%= form_tag(upload_file_admin_legal_library_document_path, multipart: true) do %>
-      <%= file_field_tag 'file' %>
-      <%= submit_tag('Upload') %>
+    <%= form_for :resource, url: upload_file_admin_legal_library_document_path, multipart: true, remote: true, authenticity_token: true do |f| %>
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
+      <%= f.submit('Загрузить') %>
     <% end %>
   </p>
 <% end %>
