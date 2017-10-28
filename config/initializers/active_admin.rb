@@ -216,8 +216,8 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add label: 'Users', priority: 1
-      # menu.add label: 'База вопросов', priority: 2
+      menu.add label: 'Пользователи', priority: 1
+      menu.add label: 'База вопросов', priority: 2
       # menu.add label: 'География', priority: 3
     end
   end
