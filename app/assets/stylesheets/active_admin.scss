@@ -44,3 +44,27 @@
     background: #fff;
   }
 }
+
+.attributes_table.question {
+  .glyphicon {
+    opacity: 0;
+  }
+
+  .comment {
+    margin-bottom: 10px;
+
+    &:hover .glyphicon-remove-comment {
+      opacity: 1;
+    }
+
+    .nested-comment {
+      border-left: 2px solid #e2e2e2;
+      margin-top: 10px;
+      padding-left: 30px;
+
+      &:hover .glyphicon-remove-nested-comment {
+        opacity: 1;
+      }
+    }
+  }
+}

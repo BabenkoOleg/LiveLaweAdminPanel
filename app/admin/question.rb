@@ -5,6 +5,13 @@ ActiveAdmin.register Question do
 
   config.sort_order = 'title_asc'
 
+  member_action :delete_comment, method: :delete do
+    comment = Comment.find(params[:comment_id]).delete
+    respond_to do |format|
+      format.js { render('delete_comment.js', locals: { id: comment.id }) }
+    end
+  end
+
   index do
     selectable_column
     id_column
@@ -28,6 +35,9 @@ ActiveAdmin.register Question do
       row ('Пользователь') { |r| r.user }
       row ('Категория') { |r| r.category }
       row ('Платный') { |r| r.charged }
+      row ('Комментарии') do
+        render partial: "comments", locals: { question: resource }
+      end
     end
   end
 

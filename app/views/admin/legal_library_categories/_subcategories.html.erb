@@ -1,5 +1,5 @@
 <% category.subcategories.each do |subcategory| %>
-  <p >
+  <p>
     <%= link_to subcategory.title, admin_legal_library_category_path(subcategory) %>
     <%= link_to edit_admin_legal_library_category_path(subcategory), class: 'edit-nested' do %>
       <span class="glyphicon glyphicon-pencil">

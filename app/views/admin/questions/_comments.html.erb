@@ -1,0 +1,30 @@
+<div class="comments">
+  <% question.comments.each do |comment| %>
+    <div class="comment" data-id="<%= comment.id %>">
+      <div class="comment-header">
+        <b><%= link_to comment.user.full_name, admin_user_path(comment.user) %></b>
+        <i>(<%= comment.created_at.strftime('%b %e, %Y %H:%M') %>)</i>
+        <%= link_to delete_comment_admin_question_path(question, comment_id: comment.id), method: :delete, remote: true do %>
+          <span class="glyphicon glyphicon-remove glyphicon-remove-comment">
+        <% end %>
+      </div>
+      <div class="comment-body">
+        <%= comment.text %>
+        <% comment.comments.each do |nested_comment| %>
+          <div class="nested-comment" data-id="<%= nested_comment.id %>">
+            <div class="comment-header">
+              <b><%= link_to nested_comment.user.full_name, admin_user_path(nested_comment.user) %></b>
+              <i>(<%= nested_comment.created_at.strftime('%b %e, %Y %H:%M') %>)</i>
+              <%= link_to delete_comment_admin_question_path(question, comment_id: nested_comment.id), method: :delete, remote: true do %>
+                <span class="glyphicon glyphicon-remove glyphicon-remove-nested-comment">
+              <% end %>
+            </div>
+            <div class="comment-body">
+              <%= nested_comment.text %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
