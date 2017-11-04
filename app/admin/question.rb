@@ -22,7 +22,9 @@ ActiveAdmin.register Question do
     column 'Пользователь', :user_id do |question|
       truncate(question.user.full_name, length: 20)
     end
-    column 'Категория', :category_id { |question| question.category.try(:name) }
+    column 'Категория', :category_id do |question|
+      question.category.try(:name)
+    end
     column 'Платный', :charged
     column 'Создан', :created_at
     actions
