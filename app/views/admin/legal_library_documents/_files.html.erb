@@ -7,9 +7,9 @@
   </p>
 <% else %>
   <p>
-    <%= form_for :resource, url: upload_file_admin_legal_library_document_path, multipart: true, remote: true, authenticity_token: true do |f| %>
-      <%= f.file_field :avatar %>
-      <%= f.hidden_field :avatar_cache %>
+    <%= form_for :resource, url: upload_file_admin_legal_library_document_path, multipart: true, authenticity_token: true do |f| %>
+      <%= f.file_field :file %>
+      <%= f.hidden_field :file_cache %>
       <%= f.submit('Загрузить') %>
     <% end %>
   </p>

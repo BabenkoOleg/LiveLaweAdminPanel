@@ -1,7 +1,7 @@
 ActiveAdmin.register LegalLibrary::Category, as: 'LegalLibraryCategories' do
   config.filters = false
   config.sort_order = 'title asc'
-  menu label: 'Legal Library', priority: 5
+  menu label: 'Правовая Библиотека', priority: 5
   permit_params :title, :parent_category_id
 
   controller do

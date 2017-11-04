@@ -15,7 +15,7 @@ ActiveAdmin.register LegalLibrary::Document do
   end
 
   member_action :upload_file, method: :post do
-    resource.update(file: params[:file])
+    resource.update(file: params[:resource][:file])
     redirect_to admin_legal_library_document_path(resource)
   end
 
