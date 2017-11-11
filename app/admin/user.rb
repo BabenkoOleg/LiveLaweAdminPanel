@@ -44,7 +44,6 @@ ActiveAdmin.register User do
       row ('Место работы') { |r| r.work }
       row ('Должность') { |r| r.staff }
       row ('Дата рождения') { |r| r.dob }
-      row ('Аватар') { |r| r.avatar }
       row ('Логин') { |r| r.login }
       row ('Факс') { |r| r.fax }
     end
@@ -78,7 +77,7 @@ ActiveAdmin.register User do
       f.input :work, label: 'Место работы'
       f.input :staff, label: 'Должность'
       f.input :dob, label: 'Дата рождения', as: :datepicker
-      f.input :avatar, label: 'Аватар'
+      f.input :avatar, label: 'Аватар', as: :file
       f.input :login, label: 'Логин'
       f.input :fax, label: 'Факс'
     end
