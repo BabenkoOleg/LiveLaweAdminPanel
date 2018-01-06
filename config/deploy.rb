@@ -12,7 +12,7 @@ require 'mina/rvm'    # for rvm support. (https://rvm.io)
 set :application_name, 'livelaw_admin'
 set :domain, '188.227.17.69'
 set :deploy_to, '/var/www/livelaw/admin'
-set :repository, 'git@github.com:BabenkoOleg/LiveLawAdminPanel.git'
+set :repository, 'git@bitbucket.org:livelaw2/livelawadminpanel.git'
 set :branch, 'master'
 set :rvm_use_path, '/usr/local/rvm/scripts/rvm'
 
